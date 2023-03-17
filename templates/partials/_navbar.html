@@ -44,9 +44,19 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item ms-auto">
+          <a class="nav-link" href="#">{{user}}</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item ms-auto">
+          <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+        </li>
+        {% endif %}
       </ul>
       <form class="d-flex" role="search">
         <input
