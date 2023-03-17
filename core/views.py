@@ -99,3 +99,9 @@ class FeedbackUpdatetView(views.UpdateView):
     model = models.FeebackModel
     form_class = forms.FeedbackForm
     success_url = reverse_lazy("core:feedback_list")
+
+class FeedbackDeleteView(views.DeleteView):
+    template_name = "core/feedback/feedback_delete.html"
+    model = models.FeebackModel
+    success_url = reverse_lazy("core:feedback_list")
+    context_object_name = "feedback"
