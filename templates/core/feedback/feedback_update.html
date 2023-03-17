@@ -1,0 +1,42 @@
+{% extends '_base.html' %} {% block content %}
+<div class="container-lg d-flex flex-column gap-3 py-3">
+  <div class="row">
+    <div class="col">
+      <h1>Share your feedback with us</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit aliquam
+        voluptate fuga harum unde! Ut voluptatibus voluptatum quam explicabo nam
+        laborum neque voluptates aliquam amet hic? Iste a officia minus deserunt
+        voluptatibus exercitationem cum distinctio, quas atque id rerum eius
+        natus, sequi aliquid totam quisquam error enim odit sunt, laudantium ut
+        voluptatem. Voluptas consequuntur sit sequi dolores eius exercitationem
+        impedit excepturi nobis fugiat in. Quaerat quo, enim quidem voluptates
+        nihil eaque dolorem doloribus! Distinctio animi, sit consequatur
+        asperiores ullam recusandae deleniti cumque molestias, dolor tempore
+        quia dolorum, labore sint quidem fugiat optio nulla perferendis tempora.
+        Veniam praesentium velit, id fugit hic assumenda modi error consequatur
+        delectus autem, maxime ea similique magnam quibusdam officiis nemo
+        repellendus consectetur porro. Mollitia dolore aliquam quis velit
+        voluptatum, beatae magni ipsa molestiae minus. Reprehenderit, pariatur
+        nulla culpa quo illo, a modi necessitatibus eius, magnam eum recusandae
+        tempore? Excepturi nobis ad nihil ipsa repudiandae quis totam.
+      </p>
+    </div>
+    <div class="col">
+      <div class="card card-body">
+        <form action="" method="post" class="django-form">
+          {% csrf_token %} {{form.as_p}}
+          <button class="btn btn-primary" type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- 127.0.0.1:8000/feedback/create/ -->

@@ -1,0 +1,22 @@
+install virtualenv
+create folder for project
+change directory to project folder
+create virtualenv:- virtualenv venv
+activate virtualenv:- venv\Scripts\activate
+install required packages:- pip install django pillow django-otp django-allauth razorpay
+create new django project:- django-admin startproject project_name .
+create following folders:-
+project_root_folder/
+|----templates
+    |---- partials
+|---- media
+    |---- default
+|---- static
+    |---- js
+    |---- css
+add newly created folder path into settings.py
+INSTALLED_APPS = [
+    ...,
+    # Local apps
+    "core"
+]

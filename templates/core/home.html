@@ -1,0 +1,34 @@
+{% extends '_base.html' %} {% block content %}
+<!-- carousel -->
+{% include "partials/_carousel.html" %}
+<div class="container-lg d-flex flex-column gap-3 py-3">
+  <div class="row">
+    <div class="col">
+      <h1>Popular Products</h1>
+      <hr />
+    </div>
+  </div>
+  <div class="row row-cols-3">
+    {% for product in products %}
+    <div class="col">
+      <div class="card">
+        <img src="{{product.image}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text fw-bold">INR {{product.price}}</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col">
+      <div class="card card-body">
+        <h5 class="card-title">No Products Found!</h5>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
