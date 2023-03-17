@@ -4,43 +4,6 @@ from django.views import generic as views  # newly added
 
 from core import forms, models
 
-
-# def home_view(request):
-#     context = {"project_name": "ECOM", "page_name": "Home", "numbers": range(10)}
-#     return render(request, "core/home.html", context)
-
-
-# def about_view(request):
-#     return render(request, "core/about.html")
-
-
-# def feedback_create_view(request):
-#     if request.method == "GET":
-#         context = {"form": forms.FeedbackForm}
-#         return render(request, "core/feedback/create.html", context)
-#     elif request.method == "POST":
-#         form = forms.FeedbackForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("core:home")
-#         else:
-#             return render(
-#                 request,
-#                 "core/feedback/create.html",
-#                 {"form": form, "errors": form.errors},
-#             )
-
-
-# Class based views
-"""
-TemplateView
-CreateView
-DetailView
-UpdateView
-DeleteView
-FormView
-View
-"""
 products = [
     {
         "name": "IPhone 14 Pro",
@@ -76,7 +39,6 @@ class AboutView(views.TemplateView):
     template_name = "core/about.html"
     extra_context = {"project_name": "ECOM", "page_name": "Home", "numbers": range(10)}
 
-# CRUD - Create Retrieve Update Delete
 # Feedback
 class FeedbackCreateView(views.CreateView):
     template_name = "core/feedback/feedback_create.html"
