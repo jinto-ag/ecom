@@ -1,5 +1,6 @@
-from django.db import models
 from django.conf import settings
+from django.db import models
+from django.urls import reverse
 
 
 class ProfileModel(models.Model):
@@ -22,3 +23,6 @@ class ProfileModel(models.Model):
 
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name}"
+
+    def get_absolute_url(self):
+        return reverse("accounts:profile_detail", args=self.pk)

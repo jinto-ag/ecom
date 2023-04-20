@@ -135,3 +135,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Authentication Redirect URLs
 LOGIN_REDIRECT_URL = "core:home"
 LOGIN_URL = "accounts:login"
+
+# Email integration
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend' #for development only
+EMAIL_FILE_PATH = BASE_DIR / 'tmp' #for development only
+EMAIL_HOST = "smtp.google.com"
+EMAIL_PORT = 487
+EMAIL_HOST_USER = "admin.ecom@gmail.com"
+EMAIL_HOST_PASSWORD = "password_here"
+EMAIL_USE_TLS = True
